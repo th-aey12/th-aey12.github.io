@@ -15,6 +15,9 @@ jobs:
           bundle install --force
             - uses: actions/checkout@v4
 
+      - name: Configure safe directory
+        run: git config --global --add safe.directory /github/workspace
+
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v4
         with:
